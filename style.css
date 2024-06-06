@@ -1,0 +1,323 @@
+* {
+  margin    : 0;
+  padding   : 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height  : 100%;
+  width   : 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family     : 'Arial', sans-serif;
+  background-color: #f2f2f2;
+}
+
+#app {
+  padding : 5%;
+  display : flex;
+  height  : 100%;
+  width   : 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* scrollbar */
+#messages {
+  flex      : 1;
+  padding   : 70px;
+  overflow-y: auto;
+}
+
+#messages::-webkit-scrollbar {
+  width: 12px;
+}
+
+#messages::-webkit-scrollbar-track {
+  background   : #f1f1f1;
+  border-radius: 10px;
+}
+
+#messages::-webkit-scrollbar-thumb {
+  background   : #888;
+  border-radius: 10px;
+}
+
+#messages::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* background ball */
+#backgroundContainer,
+#botBackgroundContainer {
+  position       : absolute;
+  top            : 0;
+  left           : 0;
+  width          : 100%;
+  height         : 100%;
+  z-index        : -1;
+  overflow       : hidden;
+  backdrop-filter: blur(10px);
+}
+
+.ball {
+  position     : absolute;
+  border-radius: 100%;
+  opacity      : 0.7;
+  z-index      : 1;
+}
+
+/* BOT list */
+.botMainContainer {
+  width          : 20%;
+  margin-left    : 15px;
+  margin-right   : 15px;
+  overflow       : hidden;
+  background     : rgba(255, 255, 255, 1);
+  backdrop-filter: blur(10px);
+  border-radius  : 30px;
+  box-shadow     : 0 4px 8px rgba(0, 0, 0, 0.3);
+  position       : relative;
+}
+
+#botContainer {
+  padding        : 1em;
+  backdrop-filter: blur(10px);
+  border-radius  : 30px;
+  height         : 100%;
+  position       : relative;
+  display        : flex;
+  flex-direction : column;
+  flex-wrap      : wrap;
+}
+
+#botList {
+  width          : 100%;
+  height         : auto;
+  list-style-type: none;
+  padding        : 0;
+  display        : flex;
+  flex-direction : column;
+  flex           : 1;
+  flex-wrap      : wrap;
+  backdrop-filter: blur(10px);
+  position       : relative;
+}
+
+#botList li {
+  display       : flex;
+  flex-direction: row;
+  align-items   : center;
+  padding       : 1em;
+}
+
+.bot {
+  padding: 0.5em;
+  cursor : pointer;
+}
+
+.botProfilPicture {
+  width        : 100%;
+  height       : auto;
+  max-width    : 70px;
+  border-radius: 60%;
+  border       : 1px solid black;
+}
+
+#deleteChat {
+  background-color: #e33131;
+  padding         : 10px 10px;
+  border          : none;
+  border-radius   : 4px;
+  color           : white;
+  cursor          : pointer;
+}
+
+#deleteChat:hover {
+  background-color: #b30303;
+}
+
+/* CHAT */
+.chatMainContainer {
+  margin-right   : 15px;
+  flex           : 1;
+  display        : flex;
+  flex-direction : column;
+  color          : black;
+  overflow       : hidden;
+  z-index        : 2;
+  background     : rgba(255, 255, 255, 1);
+  backdrop-filter: blur(10px);
+  border-radius  : 30px;
+  box-shadow     : 0 4px 8px rgba(0, 0, 0, 0.3);
+  position       : relative;
+}
+
+#chatContainer {
+  flex           : 1;
+  display        : flex;
+  flex-direction : column;
+  padding        : 1em;
+  color          : black;
+  overflow       : hidden;
+  z-index        : 2;
+  background     : rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius  : 30px;
+  box-shadow     : 0 4px 8px rgba(0, 0, 0, 0.3);
+  position       : relative;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding      : 10px;
+  border-radius: 10px;
+  max-width    : 70%;
+}
+
+.message-time {
+  font-size  : 0.8em;
+  color      : #888;
+  text-align : center;
+  margin-top : 5px;
+  margin-left: 60px;
+}
+
+.user-message-container {
+  display        : flex;
+  justify-content: flex-end;
+  flex-direction : column;
+  align-items    : flex-end;
+}
+
+.user-message {
+  background: #c0eafd;
+  text-align: right;
+}
+
+.bot-message-container {
+  display       : flex;
+  flex-direction: column;
+  flex-wrap     : wrap;
+  align-items   : flex-start;
+}
+
+.bot-message-container img {
+  width        : 40px;
+  height       : 40px;
+  border-radius: 50%;
+  margin-right : 10px;
+  border       : 1px solid black;
+  margin       : 10px;
+}
+
+.bot-profil-message-container {
+  display       : flex;
+  flex-direction: row;
+  flex-wrap     : wrap;
+}
+
+.bot-message {
+  background   : #66d9b0;
+  padding      : 10px;
+  border-radius: 10px;
+  display      : inline-block;
+  max-width    : 80%;
+}
+
+#inputContainer {
+  display      : flex;
+  padding      : 10px;
+  background   : #d9d9d9;
+  border-radius: 30px;
+  width        : 100%;
+  height       : auto;
+  max-width    : 90%;
+  margin       : 0 auto;
+}
+
+#userInput {
+  flex      : 1;
+  padding   : 10px;
+  border    : none;
+  background: transparent;
+  font-size : 1em;
+}
+
+#userInput:focus {
+  outline: none;
+}
+
+#sendButton {
+  margin-left      : 10px;
+  padding          : 10px 20px;
+  border           : none;
+  border-radius    : 4px;
+  background-color : transparent;
+  color            : #7b7979;
+  cursor           : pointer;
+  -moz-transform   : rotate(-90deg);
+  -ms-transform    : rotate(-90deg);
+  -o-transform     : rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+}
+
+#sendButton:hover {
+  color: #0056b3;
+}
+
+/* Meal */
+.meal-container {
+  display       : flex;
+  flex-direction: column;
+  align-items   : center;
+  margin-top    : 10px;
+  gap           : 10px;
+}
+
+.recipe-button {
+  max-width       : 250px;
+  margin-top      : 5px;
+  padding         : 5px 10px;
+  border          : none;
+  border-radius   : 4px;
+  background-color: #007BFF;
+  color           : white;
+  cursor          : pointer;
+}
+
+.recipe-button:hover {
+  background-color: #0056b3;
+}
+
+.meal-images {
+  display   : flex;
+  flex-wrap : wrap;
+  gap       : 10px;
+  margin-top: 10px;
+}
+
+.bot-message img {
+  max-width    : 100%;
+  height       : auto;
+  border-radius: 4px;
+}
+
+.bot-image {
+  max-width    : 250px;
+  height       : auto;
+  border-radius: 30px;
+  margin-top   : 10px;
+}
+
+#contentContainer {
+  position: relative;
+  display : flex;
+  flex    : 1;
+  z-index : 2;
+  padding : 20px;
+  gap     : 20px;
+}
