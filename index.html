@@ -1,13 +1,56 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot</title>
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <div id="app">
+
+    <div class="botMainContainer">
+      <div id="botContainer">
+        <ul id="botList">
+          <li><img src="./src/assets/Picture_weather_bot.webp" class="botProfilPicture" alt="Picture weather bot">
+            <label class="bot" data-bot-name="Weather">Weather Bot</label>
+          </li>
+          <li><img src="./src/assets/Picture_news_bot.webp" class="botProfilPicture" alt="Picture news bot">
+            <label class="bot" data-bot-name="News">News Bot</label>
+          </li>
+          <li><img src="./src/assets/Picture_chef_bot.webp" class="botProfilPicture" alt="Picture chef bot">
+            <label class="bot" data-bot-name="Crypto">Chef Bot</label>
+          </li>
+          <li><img src="./src/assets/Picture_helper_bot.webp" class="botProfilPicture" alt="Picture Helper bot">
+            <label class="bot" data-bot-name="Crypto">Helper Bot</label>
+          </li>
+        </ul>
+
+        <button id="deleteChat">CLEAR CHAT</button>
+
+      </div>
+      <div id="botBackgroundContainer"></div>
+    </div>
+
+    <div class="chatMainContainer">
+      <div id="chatContainer">
+        <div id="messages"></div>
+        <div id="inputContainer">
+          <input type="text" id="userInput" list="commands" placeholder="Type a message..." autofocus>
+          <datalist id="commands"></datalist>
+          <button id="sendButton"><i class="material-icons">send</i></button>
+        </div>
+      </div>
+      <div id="chatBackgroundContainer"></div>
+    </div>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+  <script type="module" src="./src/components/ball.js"></script>
+
+</body>
+
 </html>
