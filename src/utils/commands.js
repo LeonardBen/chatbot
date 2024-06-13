@@ -1,6 +1,6 @@
 import { getWeather, getUVIndex, getWeatherForecast } from '../api/weatherAPI';
 import { getNewsByCountry, getNewsByCategory, getNewsByQuery } from '../api/newsAPI';
-import { getRandomMeal, getMealByIngredient } from '../api/chefAPI';
+import { getRandomMeal, getMealByIngredient, getMealByArea } from '../api/chefAPI';
 
 
 export class Commands {
@@ -19,8 +19,7 @@ export class Commands {
                 '<br>3. Chef Bot:<br>' +
                 '   - "meal random": Get a random meal suggestion.<br>' +
                 '   - "meal ingredient [ingredient]": Get meals by ingredient.<br>' +
-                '   - "meal area [area]": Get meals by area.<br>' +
-                '   - "recipe [meal id]": Get recipe by meal ID.'
+                '   - "meal area [area]": Get meals by area.<br>'
         };
     };
 
@@ -69,6 +68,9 @@ export class Commands {
                     if (userInputValue.toLowerCase().includes('ingredient')) {
                         const ingredient = userInputValue.split(' ').slice(2).join(' ');
                         response = await getMealByIngredient(ingredient);
+                    } else if (userInputValue.toLowerCase().includes('area')) {
+                        const area = userInputValue.split(' ').slice(2).join(' ');
+                        response = await getMealByArea(area);
                     } else {
                         response = await getRandomMeal();
                     }

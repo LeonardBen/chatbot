@@ -1,4 +1,5 @@
 import { Chat } from './components/chat';
+import { BotList } from './components/botList';
 import { loadMessages, clearLocalStorage, clearChatMessages } from './utils/localStorage';
 
 const commands = [
@@ -22,8 +23,8 @@ document.querySelector('#deleteChat').addEventListener('click', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+    const botList = new BotList();
     const chat = new Chat();
-    const botList = document.querySelectorAll('.bot');
     const userInput = document.querySelector('#userInput');
     const commandList = document.querySelector('#commands');
     const sendButton = document.querySelector('#sendButton');
@@ -31,11 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Restore chat history from localStorage
     loadMessages().forEach(msg => chat.addMessage({ ...msg, animate: false }));
 
-    botList.forEach(bot => {
-        bot.addEventListener('click', () => {
-            userInput.value = bot.textContent;
-        });
-    });
+    //Set botname in user input
+    botList.onBotSelect = (botName) => {
+        userInput.value = botName;
+    };
 
     // Update suggestions in datalist
     userInput.addEventListener('input', () => {

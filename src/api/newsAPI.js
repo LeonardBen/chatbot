@@ -1,14 +1,14 @@
 const countryCodes = {
-    "France": "fr",
-    "United States": "us",
-    "United Kingdom": "gb",
-    "Germany": "de",
-    "Spain": "es"
+    "france": "fr",
+    "united states": "us",
+    "united kingdom": "gb",
+    "germany": "de",
+    "spain": "es"
 };
 
 
 export async function getNewsByCountry(country) {
-    const countryCode = countryCodes[country];
+    const countryCode = countryCodes[country.toLowerCase()];
     if (!countryCode) {
         return 'Invalid country name. Please use the full country name.';
     }
