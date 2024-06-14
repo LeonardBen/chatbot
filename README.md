@@ -26,7 +26,12 @@ This chatbot can cook something especially for you 👨‍🍳 or send data abou
 4. Get all commands
 ```bash
   help
-``` 
+```
+
+
+https://github.com/LeonardBen/chatbot/assets/72882359/33e73534-2b55-4912-9db2-79efad399425
+
+
     
 ## Features
 
