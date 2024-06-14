@@ -22,6 +22,11 @@ This chatbot can cook something especially for you 👨‍🍳 or send data abou
 ```bash
   npm run dev
 ```
+
+4. Get all commands
+```bash
+  help
+``` 
     
 ## Features
 
