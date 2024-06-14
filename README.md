@@ -1,7 +1,7 @@
 
 # CHATBOT
 
-This chatbot can cook something especially for you 🍽 or send data about the weather 🌞 and get interesting news 📺
+This chatbot can cook something especially for you 👨‍🍳 or send data about the weather 🌞 and get interesting news 📺
 
 
 ## Installation & usage
@@ -35,7 +35,7 @@ This chatbot can cook something especially for you 🍽 or send data about the w
 - **news category** [category] - Get news by category.
 - **news query** [query] - Get news by search query.
 
-#### 📺 Chef Bot
+#### 👨‍🍳 Chef Bot
 - **meal random** [country] - Get a random meal suggestion.
 - **meal ingredient** [ingredient] - Get meals by ingredient.
 - **meal area** [area] - Get meals by area.
